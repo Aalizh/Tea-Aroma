@@ -1,0 +1,9 @@
+{
+  "values": [
+    "tea_aroma:bamboo_leaves",
+    {
+      "id": "festival_delicacies:bamboo_leaves",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "parent": "tea_aroma:get_fresh_tea_leaves",
+  "criteria": {
+    "rose_tea_leaves": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tea_aroma:rose_tea_leaves"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "dandelion_tea_leaves": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tea_aroma:dandelion_tea_leaves"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "blue_orchid_tea_leaves": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tea_aroma:blue_orchid_tea_leaves"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "lilac_tea_leaves": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tea_aroma:lilac_tea_leaves"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "tea_aroma.advancement.get_floral_tea_leaves.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "tea_aroma:rose_tea_leaves"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "tea_aroma.advancement.get_floral_tea_leaves"
+    }
+  },
+  "requirements": [
+    [
+      "rose_tea_leaves",
+      "dandelion_tea_leaves",
+      "blue_orchid_tea_leaves",
+      "lilac_tea_leaves"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,31 @@
+{
+  "display": {
+    "icon": {
+      "item": "tea_aroma:kettle"
+    },
+    "title": {
+      "translate": "tea_aroma.advancement.root"
+    },
+    "background": "minecraft:textures/block/bamboo_block.png",
+    "description": {
+      "translate": "tea_aroma.advancement.root.desc"
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "inventory_changed": {
+      "conditions": {},
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "inventory_changed"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
+

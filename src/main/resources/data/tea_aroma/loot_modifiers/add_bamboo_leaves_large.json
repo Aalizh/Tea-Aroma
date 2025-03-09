@@ -1,0 +1,13 @@
+{
+  "conditions": [
+    {
+      "condition": "minecraft:block_state_property",
+      "block": "minecraft:bamboo",
+      "properties": {
+        "leaves": "large"
+      }
+    }
+  ],
+  "item": "tea_aroma:bamboo_leaves",
+  "type": "tea_aroma:bamboo_leaves"
+}

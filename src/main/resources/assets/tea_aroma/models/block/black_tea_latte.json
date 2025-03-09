@@ -1,0 +1,6 @@
+{
+  "parent": "tea_aroma:block/tea",
+  "textures": {
+    "1": "tea_aroma:block/tea/black_tea_latte"
+  }
+}

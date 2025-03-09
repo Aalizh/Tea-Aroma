@@ -1,0 +1,64 @@
+{
+  "variants": {
+    "facing=north,process_type=0": {
+      "model": "tea_aroma:block/bamboo_tray"
+    },
+    "facing=west,process_type=0": {
+      "model": "tea_aroma:block/bamboo_tray",
+      "y": 270
+    },
+    "facing=south,process_type=0": {
+      "model": "tea_aroma:block/bamboo_tray",
+      "y": 180
+    },
+    "facing=east,process_type=0": {
+      "model": "tea_aroma:block/bamboo_tray",
+      "y": 90
+    },
+    "facing=north,process_type=1": {
+      "model": "tea_aroma:block/bamboo_tray"
+    },
+    "facing=west,process_type=1": {
+      "model": "tea_aroma:block/bamboo_tray",
+      "y": 270
+    },
+    "facing=south,process_type=1": {
+      "model": "tea_aroma:block/bamboo_tray",
+      "y": 180
+    },
+    "facing=east,process_type=1": {
+      "model": "tea_aroma:block/bamboo_tray",
+      "y": 90
+    },
+    "facing=north,process_type=2": {
+      "model": "tea_aroma:block/bamboo_tray"
+    },
+    "facing=west,process_type=2": {
+      "model": "tea_aroma:block/bamboo_tray",
+      "y": 270
+    },
+    "facing=south,process_type=2": {
+      "model": "tea_aroma:block/bamboo_tray",
+      "y": 180
+    },
+    "facing=east,process_type=2": {
+      "model": "tea_aroma:block/bamboo_tray",
+      "y": 90
+    },
+    "facing=north,process_type=3": {
+      "model": "tea_aroma:block/bamboo_tray_processing_3"
+    },
+    "facing=west,process_type=3": {
+      "model": "tea_aroma:block/bamboo_tray_processing_3",
+      "y": 270
+    },
+    "facing=south,process_type=3": {
+      "model": "tea_aroma:block/bamboo_tray_processing_3",
+      "y": 180
+    },
+    "facing=east,process_type=3": {
+      "model": "tea_aroma:block/bamboo_tray_processing_3",
+      "y": 90
+    }
+  }
+}

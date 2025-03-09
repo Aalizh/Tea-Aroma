@@ -1,0 +1,15 @@
+{
+  "type": "tea_aroma:brewing",
+  "ingredients": [
+    {
+      "item": "simplytea:teabag_black"
+    },
+    {
+      "item": "simplytea:tea_stick"
+    }
+  ],
+  "result": {
+    "item": "simplytea:cup_tea_black"
+  },
+  "liquid_type": "boiling_milk"
+}

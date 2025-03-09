@@ -1,0 +1,38 @@
+{
+  "block.tea_tree.pick": {
+    "subtitle": "tea_aroma.subtitles.tea_tree.pick",
+    "sounds": [
+      {
+        "name": "block.azalea_leaves.place",
+        "type": "event"
+      }
+    ]
+  },
+  "block.kettle.fill": {
+    "subtitle": "tea_aroma.subtitles.kettle.fill",
+    "sounds": [
+      {
+        "name": "item.bottle.fill",
+        "type": "event"
+      }
+    ]
+  },
+  "block.tea_brew": {
+    "subtitle": "tea_aroma.subtitles.tea_brew",
+    "sounds": [
+      {
+        "name": "item.bottle.empty",
+        "type": "event"
+      }
+    ]
+  },
+  "block.tea_processing_2": {
+    "subtitle": "tea_aroma.subtitles.tea_processing_2",
+    "sounds": [
+      {
+        "name": "block.azalea_leaves.place",
+        "type": "event"
+      }
+    ]
+  }
+}

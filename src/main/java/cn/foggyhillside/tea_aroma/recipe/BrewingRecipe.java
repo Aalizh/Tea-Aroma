@@ -80,11 +80,11 @@ public class BrewingRecipe implements Recipe<SimpleContainer> {
                 isLiquidMatched = true;
             }
         } else if (ModCompat.isSimplyTeaLoaded()) {
-            if (this.liquidType.equals("ice") && stack.is(ModCompat.SIMPLYTEA_ICE_CUBE)) {
+            if (this.liquidType.equals("ice") && stack.is(ModCompat.getIceCube())) {
                 isLiquidMatched = true;
-            } else if (stack.is(ModCompat.SIMPLYTEA_TEAPOT_HOT) && this.liquidType.equals("boiling_water")) {
+            } else if (stack.is(ModCompat.getTeapotHot()) && this.liquidType.equals("boiling_water")) {
                 isLiquidMatched = true;
-            } else if (stack.is(ModCompat.SIMPLYTEA_TEAPOT_HOT) && this.liquidType.equals("boiling_milk")) {
+            } else if (stack.is(ModCompat.getTeapotFrothed()) && this.liquidType.equals("boiling_milk")) {
                 isLiquidMatched = true;
             }
         }

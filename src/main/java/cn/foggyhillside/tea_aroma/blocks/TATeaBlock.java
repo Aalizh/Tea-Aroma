@@ -31,7 +31,7 @@ public class TATeaBlock extends TABlock {
         if (pHand.equals(InteractionHand.MAIN_HAND)) {
             ItemStack heldStack = pPlayer.getItemInHand(pHand);
             if (!heldStack.isEmpty()) {
-                if (ModCompat.isSimplyTeaLoaded() && heldStack.is(ModCompat.SIMPLYTEA_TEAPOT_FROTHED)) {
+                if (ModCompat.isSimplyTeaLoaded() && heldStack.is(ModCompat.getTeapotFrothed())) {
                     SimpleContainer container = new SimpleContainer(2);
                     Item item = ForgeRegistries.ITEMS.getValue(new ResourceLocation(ForgeRegistries.BLOCKS.getKey(pLevel.getBlockState(pPos).getBlock()).toString()));
                     ItemStack stack = new ItemStack(item);

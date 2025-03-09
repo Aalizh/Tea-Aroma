@@ -13,11 +13,6 @@ import net.minecraftforge.fml.ModList;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public class ModCompat {
-    public static final Item SIMPLYTEA_TEAPOT_FROTHED = ForgeRegistries.ITEMS.getValue(new ResourceLocation("simplytea", "teapot_frothed"));
-    public static final Item SIMPLYTEA_ICE_CUBE = ForgeRegistries.ITEMS.getValue(new ResourceLocation("simplytea", "ice_cube"));
-    public static final Item SIMPLYTEA_TEAPOT_HOT = ForgeRegistries.ITEMS.getValue(new ResourceLocation("simplytea", "teapot_hot"));
-    public static final Item SIMPLYTEA_TEAPOT = ForgeRegistries.ITEMS.getValue(new ResourceLocation("simplytea", "teapot"));
-    public static final Item TEA_STICK = ForgeRegistries.ITEMS.getValue(new ResourceLocation("simplytea", "tea_stick"));
 
     public static void teapotPour(ItemStack stack, Player player, InteractionHand hand){
         if (stack.getDamageValue() < stack.getMaxDamage() - 1) {
@@ -25,9 +20,29 @@ public class ModCompat {
         } else {
             if (stack.hurt(1, player.getRandom(), player instanceof ServerPlayer ? (ServerPlayer) player : null)) {
                 stack.shrink(1);
-                player.setItemInHand(hand, ModCompat.SIMPLYTEA_TEAPOT != null ? new ItemStack(ModCompat.SIMPLYTEA_TEAPOT) : ItemStack.EMPTY);
+                player.setItemInHand(hand, ModCompat.getTeapot() != null ? new ItemStack(ModCompat.getTeapot()) : ItemStack.EMPTY);
             }
         }
+    }
+
+    public static Item getTeaStick(){
+        return ForgeRegistries.ITEMS.getValue(new ResourceLocation("simplytea", "tea_stick"));
+    }
+
+    public static Item getIceCube(){
+        return ForgeRegistries.ITEMS.getValue(new ResourceLocation("simplytea", "ice_cube"));
+    }
+
+    public static Item getTeapot(){
+        return ForgeRegistries.ITEMS.getValue(new ResourceLocation("simplytea", "teapot"));
+    }
+
+    public static Item getTeapotHot(){
+        return ForgeRegistries.ITEMS.getValue(new ResourceLocation("simplytea", "teapot_hot"));
+    }
+
+    public static Item getTeapotFrothed(){
+        return ForgeRegistries.ITEMS.getValue(new ResourceLocation("simplytea", "teapot_frothed"));
     }
     
     public static Item blockToSTItem(Level level, BlockPos pos){

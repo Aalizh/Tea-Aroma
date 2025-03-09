@@ -18,6 +18,7 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
@@ -73,32 +74,34 @@ public class CupBlock extends BaseEntityBlock {
                         pLevel.removeBlock(pPos, false);
                     }
                     return InteractionResult.SUCCESS;
-                } else if ((heldStack.is(ModCompat.SIMPLYTEA_ICE_CUBE) || heldStack.is(ModCompat.SIMPLYTEA_TEAPOT_HOT) || heldStack.is(ModCompat.SIMPLYTEA_TEAPOT_FROTHED))
+                } else if ((heldStack.is(ModCompat.getIceCube()) || heldStack.is(ModCompat.getTeapotHot()) || heldStack.is(ModCompat.getTeapotFrothed()))
                         && !cupEntity.isEmpty()) {
                     SimpleContainer container = cupEntity.getInventoryContainer();
                     container.setItem(container.getContainerSize() - 1, heldStack);
                     Optional<BrewingRecipe> recipe = pLevel.getRecipeManager().getRecipeFor(BrewingRecipe.Type.INSTANCE, container, pLevel);
 
                     if (recipe.isPresent()) {
-                        if (recipe.get().getResultItem(pLevel.registryAccess()).getItem() instanceof BlockItem result) {
+                        ItemStack resultStack = recipe.get().getResultItem(pLevel.registryAccess());
+                        Item result = recipe.get().getResultItem(pLevel.registryAccess()).getItem();
+                        if (result instanceof BlockItem) {
                             if (!pPlayer.isCreative()) {
-                                if (heldStack.is(ModCompat.SIMPLYTEA_ICE_CUBE)) {
-                                    heldStack.shrink(1);
-                                } else {
-                                    ModCompat.teapotPour(heldStack, pPlayer, pHand);
-                                }
+                                ModCompat.teapotPour(heldStack, pPlayer, pHand);
                             }
                             pLevel.playSound(null, pPos.getX(), pPos.getY(), pPos.getZ(), ModSounds.TEA_BREW.get(), SoundSource.NEUTRAL, 1.0F, 1.0F);
                             cupEntity.emptyInventory();
-                            pLevel.setBlockAndUpdate(pPos, result.getBlock().defaultBlockState().setValue(FACING, pState.getValue(FACING)));
+                            pLevel.setBlockAndUpdate(pPos, ((BlockItem) result).getBlock().defaultBlockState().setValue(FACING, pState.getValue(FACING)));
+
                             return InteractionResult.SUCCESS;
-                        } else if (ModCompat.isSimplyTeaLoaded() && recipe.get().getResultItem(pLevel.registryAccess()).is(ModTags.SIMPLYTEA_TEA)) {
-                            ItemStack result = recipe.get().getResultItem(pLevel.registryAccess());
-                            ResourceLocation resultID = ForgeRegistries.ITEMS.getKey(result.getItem());
+                        } else if (recipe.get().getResultItem(pLevel.registryAccess()).is(ModTags.SIMPLYTEA_TEA)) {
+                            ResourceLocation resultID = ForgeRegistries.ITEMS.getKey(resultStack.getItem());
                             Block resultBlock = ForgeRegistries.BLOCKS.getValue(ResourceLocation.tryParse(TeaAroma.MODID + ":" + resultID.getPath()));
                             if (resultBlock != null) {
                                 if (!pPlayer.isCreative()) {
-                                    heldStack.shrink(1);
+                                    if (heldStack.is(ModCompat.getIceCube())) {
+                                        heldStack.shrink(1);
+                                    } else {
+                                        ModCompat.teapotPour(heldStack, pPlayer, pHand);
+                                    }
                                 }
                                 pLevel.playSound(null, pPos.getX(), pPos.getY(), pPos.getZ(), ModSounds.TEA_BREW.get(), SoundSource.NEUTRAL, 1.0F, 1.0F);
                                 cupEntity.emptyInventory();

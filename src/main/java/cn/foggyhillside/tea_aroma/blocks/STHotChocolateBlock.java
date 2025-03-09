@@ -28,7 +28,7 @@ public class STHotChocolateBlock extends STBlock {
                 if(pLevel.isClientSide() && !pState.getValue(WITH_CINNAMON)){
                     return InteractionResult.CONSUME;
                 }
-                if (flavour(pLevel, pState, pPos, pPlayer, pHand, WITH_CINNAMON, ModCompat.TEA_STICK)) {
+                if (flavour(pLevel, pState, pPos, pPlayer, pHand, WITH_CINNAMON, ModCompat.getTeaStick())) {
                     return InteractionResult.SUCCESS;
                 }
             } else {
